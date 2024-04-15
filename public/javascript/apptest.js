@@ -83,7 +83,7 @@ function startDataListeners() {
   // Get all our products and render them to the page
   const products = document.querySelector('.products');
   const template = document.querySelector('#product');
-  db.collection('prod_products')
+  db.collection('products')
     .where('active', '==', true)
     .get()
     .then(function (querySnapshot) {
@@ -136,7 +136,7 @@ function startDataListeners() {
       });
     });
   // Get all subscriptions for the customer
-  db.collection('prod_customers')
+  db.collection('customers')
     .doc(currentUser)
     .collection('subscriptions')
     .where('status', 'in', ['trialing', 'active'])
@@ -205,7 +205,7 @@ async function subscribe(event) {
   }
 
   const docRef = await db
-    .collection('prod_customers')
+    .collection('customers')
     .doc(currentUser)
     .collection('checkout_sessions')
     .add(checkoutSession);
