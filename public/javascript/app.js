@@ -1,18 +1,36 @@
 const prices = {};
 
 // Replace with your Firebase project config.
+// const firebaseConfig = {
+//   apiKey: 'AIzaSyAEGmffBNUsVrdVS_iyiI4eUMOWWp4Q5dI',
+//   authDomain: 'stripe-subs-ext.firebaseapp.com',
+//   databaseURL: 'https://stripe-subs-ext.firebaseio.com',
+//   projectId: 'stripe-subs-ext',
+//   storageBucket: 'stripe-subs-ext.appspot.com',
+//   messagingSenderId: '955066520266',
+//   appId: '1:955066520266:web:ec7135a76fea7a1bce9a33',
+// };
+// const firebaseConfig = {
+//   apiKey: "AIzaSyD4uv76_uNA09Lq7p-eQTH8nLpABYpNEy0",
+//   authDomain: "prop-marketing.firebaseapp.com",
+//   projectId: "prop-marketing",
+//   storageBucket: "prop-marketing.appspot.com",
+//   messagingSenderId: "94186197744",
+//   appId: "1:94186197744:web:fa825ea635570a15bba835",
+//   measurementId: "G-LP3KWDDP8S"
+// };
 const firebaseConfig = {
-  apiKey: 'AIzaSyAEGmffBNUsVrdVS_iyiI4eUMOWWp4Q5dI',
-  authDomain: 'stripe-subs-ext.firebaseapp.com',
-  databaseURL: 'https://stripe-subs-ext.firebaseio.com',
-  projectId: 'stripe-subs-ext',
-  storageBucket: 'stripe-subs-ext.appspot.com',
-  messagingSenderId: '955066520266',
-  appId: '1:955066520266:web:ec7135a76fea7a1bce9a33',
+  apiKey: "AIzaSyC3kWZDYjBQyrLEQwSnhNRmNY1OvbjZXKk",
+  authDomain: "web3-marketing.firebaseapp.com",
+  projectId: "web3-marketing",
+  storageBucket: "web3-marketing.appspot.com",
+  messagingSenderId: "165267088791",
+  appId: "1:165267088791:web:e7b90dff7748b902f350d2",
+  measurementId: "G-7HN236MC06"
 };
 
 // Replace with your cloud functions location
-const functionLocation = 'us-east1';
+const functionLocation = 'us-central1';
 
 // Initialize Firebase
 const firebaseApp = firebase.initializeApp(firebaseConfig);
@@ -42,9 +60,9 @@ const firebaseUiConfig = {
   ],
   credentialHelper: firebaseui.auth.CredentialHelper.NONE,
   // Your terms of service url.
-  tosUrl: 'https://example.com/terms',
+  tosUrl: 'https://app.tidalforce.org/terms',
   // Your privacy policy url.
-  privacyPolicyUrl: 'https://example.com/privacy',
+  privacyPolicyUrl: 'https://app.tidalforce.org/privacy',
 };
 firebase.auth().onAuthStateChanged((firebaseUser) => {
   if (firebaseUser) {
@@ -166,9 +184,12 @@ async function subscribe(event) {
   if (prices[selectedPrice.price]?.recurring?.usage_type !== 'metered')
     selectedPrice.quantity = 1;
   const checkoutSession = {
-    automatic_tax: true,
-    tax_id_collection: true,
-    collect_shipping_address: true,
+    // automatic_tax: true,
+    automatic_tax: false,
+    // tax_id_collection: true,
+    tax_id_collection: false,
+    // collect_shipping_address: true,
+    collect_shipping_address: false,
     allow_promotion_codes: true,
     line_items: [selectedPrice],
     success_url: window.location.origin,
@@ -212,7 +233,8 @@ document
     const functionRef = firebase
       .app()
       .functions(functionLocation)
-      .httpsCallable('ext-firestore-stripe-subscriptions-createPortalLink');
+      // .httpsCallable('ext-firestore-stripe-subscriptions-createPortalLink');
+      .httpsCallable('ext-firestore-stripe-payments-createPortalLink');
     const { data } = await functionRef({ returnUrl: window.location.origin });
     window.location.assign(data.url);
   });
