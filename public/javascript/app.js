@@ -68,6 +68,7 @@ firebase.auth().onAuthStateChanged((firebaseUser) => {
   if (firebaseUser) {
     document.querySelector('#loader').style.display = 'none';
     document.querySelector('main').style.display = 'block';
+    document.querySelector('#useremail').innerHTML = JSON.stringify(firebaseUser);
     currentUser = firebaseUser.uid;
     startDataListeners();
   } else {
