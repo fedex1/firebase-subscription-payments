@@ -10,15 +10,6 @@ const prices = {};
 //   messagingSenderId: '955066520266',
 //   appId: '1:955066520266:web:ec7135a76fea7a1bce9a33',
 // };
-// const firebaseConfig = {
-//   apiKey: "AIzaSyD4uv76_uNA09Lq7p-eQTH8nLpABYpNEy0",
-//   authDomain: "prop-marketing.firebaseapp.com",
-//   projectId: "prop-marketing",
-//   storageBucket: "prop-marketing.appspot.com",
-//   messagingSenderId: "94186197744",
-//   appId: "1:94186197744:web:fa825ea635570a15bba835",
-//   measurementId: "G-LP3KWDDP8S"
-// };
 const firebaseConfig = {
   apiKey: "AIzaSyC3kWZDYjBQyrLEQwSnhNRmNY1OvbjZXKk",
   authDomain: "web3-marketing.firebaseapp.com",
