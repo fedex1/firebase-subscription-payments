@@ -1,5 +1,7 @@
 # Run Subscription Payments with the Stripe Firebase Extension
 
+This is used in VanZilla.tidalforce.org and web3 marketing
+
 This is an example web client for usage with the [Stripe Subscriptions Firebase Extension](https://firebase.google.com/products/extensions/firestore-stripe-subscriptions).
 
 **Features:**
