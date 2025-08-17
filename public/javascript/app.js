@@ -104,7 +104,7 @@ function startDataListeners() {
         const anchorlink = document.createElement('a')
         anchorlink.href=`#${product.name.toLowerCase().replace(/[^a-z0-9]/g,"-")}`
         anchorlink.innerText=product.name
-        containeranchorlist.querySelector('h3').appendChild(anchorlink)
+        containeranchorlist.querySelector('.anchor').appendChild(anchorlink)
         
 
 
