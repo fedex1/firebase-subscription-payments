@@ -48,6 +48,10 @@ footer a {
   margin-top: 3rem;
 }
 
+.product {
+  background: #FAF6C7;
+}
+
 .product img {
   width: 300px;
 }
