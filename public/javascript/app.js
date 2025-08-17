@@ -76,6 +76,10 @@ function startDataListeners() {
   // Get all our products and render them to the page
   const products = document.querySelector('.products');
   const template = document.querySelector('#product');
+
+  const anchors = document.querySelector('.anchors');
+  const templateanchorlist = document.querySelector('#anchorlist');
+
   db.collection('prod_products')
     .where('active', '==', true)
     .get()
@@ -93,8 +97,18 @@ function startDataListeners() {
 
         const product = doc.data();
         const container = template.content.cloneNode(true);
+        const containeranchorlist = templateanchorlist.content.cloneNode(true);
 
         container.querySelector('h2').innerText = product.name.toUpperCase();
+        // containeranchorlist.querySelector('h3').innerText = product.name.toLowerCase().replace(/[^a-z0-9]/g,'-');
+        const anchorlink = document.createElement('a')
+        anchorlink.href=`#${product.name.toLowerCase().replace(/[^a-z0-9]/g,"-")}`
+        anchorlink.innerText=product.name
+        containeranchorlist.querySelector('h3').appendChild(anchorlink)
+        
+
+
+        container.querySelector('h2').id = product.name.toLowerCase().replace(/[^a-z0-9]/g,'-');
         container.querySelector('.description').innerText =
           product.description?.toUpperCase() || '';
         // Prices dropdown
@@ -126,6 +140,7 @@ function startDataListeners() {
         form.addEventListener('submit', subscribe);
 
         products.appendChild(container);
+        anchors.appendChild(containeranchorlist);
       });
     });
   // Get all subscriptions for the customer
