@@ -71,10 +71,14 @@
     <section id="subscribe">
       <h2>Join the Mailing List</h2>
       <p>Stay updated on new data releases and campaign strategies.</p>
-      <form method="post" action-xhr="/your-endpoint" target="_top">
+      <form method="post" action-xhr="https://script.google.com/macros/s/AKfycbwYcIIAm7wgFNTlaHylfeX2ABQ9WIx4DzkbEOH0sQhAmCeyOicVusPnc5Y9XSBUkJVfeA/exec" target="_top" on="submit-success:my-form.hide,thanks-message.show">
         <input type="text" name="name" placeholder="Full Name" required>
         <input type="email" name="email" placeholder="Email Address" required>
         <input type="submit" value="Subscribe Now" class="btn">
+        <div id="thanks-message" hidden>
+    <h2>Thank you!</h2>
+    <p>Your submission was successful.</p>
+  </div>
         <div submit-success>
           <template type="amp-mustache">
             Success! You are now subscribed.
@@ -90,7 +94,7 @@
   </div>
 
   <footer>
-    <p>&copy; 2023 Vanzilla Campaign Systems. All Rights Reserved.</p>
+    <p>&copy; 2026 Vanzilla Campaign Systems. All Rights Reserved.</p>
   </footer>
 
 </body>
