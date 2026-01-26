@@ -9,6 +9,8 @@
   <script async src="https://cdn.ampproject.org/v0.js"></script>
   <script async custom-element="amp-form" src="https://cdn.ampproject.org/v0/amp-form-0.1.js"></script>
   <script async custom-element="amp-anim" src="https://cdn.ampproject.org/v0/amp-anim-0.1.js"></script>
+  <script async custom-element="amp-bind" src="https://cdn.ampproject.org/v0/amp-bind-0.1.js"></script>
+
   
   <style amp-custom>
     :root {
@@ -68,17 +70,23 @@
       <a href="https://vanzilla.tidalforce.org/" class="btn">View Products</a>
     </section>
 
+
     <section id="subscribe">
       <h2>Join the Mailing List</h2>
       <p>Stay updated on new data releases and campaign strategies.</p>
       <form method="post" action-xhr="https://script.google.com/macros/s/AKfycbwYcIIAm7wgFNTlaHylfeX2ABQ9WIx4DzkbEOH0sQhAmCeyOicVusPnc5Y9XSBUkJVfeA/exec" target="_top" on="submit-success:my-form.hide,thanks-message.show">
         <input type="text" name="name" placeholder="Full Name" required>
         <input type="email" name="email" placeholder="Email Address" required>
-        <input type="submit" value="Subscribe Now" class="btn">
+        <input type="submit" value="Subscribe Now" class="btn"
+        on="tap:AMP.setState({ clicked: true })"
+        >
         <div id="thanks-message" hidden>
     <h2>Thank you!</h2>
     <p>Your submission was successful.</p>
   </div>
+<div [hidden]="!clicked" hidden class="message">
+    <p>Your submission was successful.</p>
+</div>
         <div submit-success>
           <template type="amp-mustache">
             Success! You are now subscribed.
