@@ -1,0 +1,97 @@
+<!doctype html>
+<html ⚡ lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>Vanzilla | NY Voter Database & Campaign Tools</title>
+  <link rel="canonical" href="self.html">
+  <meta name="viewport" content="width=device-width,minimum-scale=1,initial-scale=1">
+  <style amp-boilerplate>body{-webkit-animation:-amp-start 8s steps(1,end) 0s 1 normal both;-moz-animation:-amp-start 8s steps(1,end) 0s 1 normal both;-ms-animation:-amp-start 8s steps(1,end) 0s 1 normal both;animation:-amp-start 8s steps(1,end) 0s 1 normal both}@-webkit-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@-moz-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@-ms-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@-o-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}</style><noscript><style amp-boilerplate>body{-webkit-animation:none;-moz-animation:none;-ms-animation:none;animation:none}</style></noscript>
+  <script async src="https://cdn.ampproject.org/v0.js"></script>
+  <script async custom-element="amp-form" src="https://cdn.ampproject.org/v0/amp-form-0.1.js"></script>
+  <script async custom-element="amp-anim" src="https://cdn.ampproject.org/v0/amp-anim-0.1.js"></script>
+  
+  <style amp-custom>
+    :root {
+      --primary: #003366;
+      --secondary: #e91e63;
+      --light: #f4f4f4;
+      --dark: #333;
+    }
+    body { font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif; line-height: 1.6; color: var(--dark); }
+    header { background: var(--primary); color: white; padding: 1rem; text-align: center; }
+    .hero { background: #002244; color: white; padding: 40px 20px; text-align: center; }
+    .hero h1 { margin: 0; font-size: 2.5rem; }
+    .container { padding: 20px; max-width: 800px; margin: auto; }
+    .card { border: 1px solid #ddd; padding: 20px; margin: 10px 0; border-radius: 8px; box-shadow: 0 2px 5px rgba(0,0,0,0.1); }
+    .btn { background: var(--secondary); color: white; padding: 12px 25px; text-decoration: none; border-radius: 5px; display: inline-block; border: none; font-size: 1rem; cursor: pointer; }
+    .features { display: flex; flex-wrap: wrap; justify-content: space-between; }
+    .feature-item { flex: 1 1 45%; margin: 10px; }
+    form { background: var(--light); padding: 20px; border-radius: 8px; margin-top: 20px; }
+    input[type="email"], input[type="text"] { width: 100%; padding: 10px; margin: 10px 0; box-sizing: border-box; }
+    footer { text-align: center; padding: 20px; font-size: 0.8rem; color: #777; }
+    .price-tag { font-size: 1.5rem; color: var(--primary); font-weight: bold; }
+  </style>
+</head>
+<body>
+
+  <header>
+    <h1>VANZILLA</h1>
+  </header>
+
+  <section class="hero">
+    <h2>Win New York.</h2>
+    <p>Comprehensive Voter Registration Databases for NYC & NYS Campaigns.</p>
+    <a href="#subscribe" class="btn">Get Started</a>
+  </section>
+
+  <div class="container">
+    <section>
+      <h2>Enterprise Election Tools</h2>
+      <p>We provide the data and the software; you provide the vision. By keeping prices low and market share high, we empower every campaign—from grassroots to statewide—to reach the right voters at the right time.</p>
+      
+      <div class="features">
+        <div class="feature-item card">
+          <h3>The Database</h3>
+          <p>Access the most up-to-date New York State and City voter registration records.</p>
+        </div>
+        <div class="feature-item card">
+          <h3>Analytics</h3>
+          <p>Utilize our <a href="https://lookerstudio.google.com/reporting/6cf6d396-5786-495a-87cb-c0bee1240fcb" target="_blank">Live Reporting Dashboards</a> to visualize your path to victory.</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="card">
+      <h2>Software & Consultancy</h2>
+      <p>Beyond data, we offer full-scale campaign tech consulting. We can walk you through live demonstrations of our proprietary tools designed for high-impact voter contact.</p>
+      <p class="price-tag">Affordable Pricing. Expert Guidance.</p>
+      <a href="https://vanzilla.tidalforce.org/" class="btn">View Products</a>
+    </section>
+
+    <section id="subscribe">
+      <h2>Join the Mailing List</h2>
+      <p>Stay updated on new data releases and campaign strategies.</p>
+      <form method="post" action-xhr="/your-endpoint" target="_top">
+        <input type="text" name="name" placeholder="Full Name" required>
+        <input type="email" name="email" placeholder="Email Address" required>
+        <input type="submit" value="Subscribe Now" class="btn">
+        <div submit-success>
+          <template type="amp-mustache">
+            Success! You are now subscribed.
+          </template>
+        </div>
+        <div submit-error>
+          <template type="amp-mustache">
+            Error! Please try again.
+          </template>
+        </div>
+      </form>
+    </section>
+  </div>
+
+  <footer>
+    <p>&copy; 2023 Vanzilla Campaign Systems. All Rights Reserved.</p>
+  </footer>
+
+</body>
+</html>
