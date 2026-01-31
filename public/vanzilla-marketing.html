@@ -74,9 +74,10 @@
     <section id="subscribe">
       <h2>Join the Mailing List</h2>
       <p>Stay updated on new data releases and campaign strategies.</p>
-      <form method="post" action-xhr="https://script.google.com/macros/s/AKfycbwYcIIAm7wgFNTlaHylfeX2ABQ9WIx4DzkbEOH0sQhAmCeyOicVusPnc5Y9XSBUkJVfeA/exec" target="_top" on="submit-success:my-form.hide,thanks-message.show">
+      <form method="post" action-xhr="https://script.google.com/macros/s/AKfycbxl4kLkNicIhMr3zZNdM9y4C3ajcSoiGeG0D8OHv_Eiiv8tgAtDJCBifGqc-eUYa8zyYw/exec" target="_top" on="submit-success:my-form.hide,thanks-message.show">
         <input type="text" name="name" placeholder="Full Name" required>
         <input type="email" name="email" placeholder="Email Address" required>
+        <input type="tag" name="tag" hidden value="vanzilla" required>
         <input type="submit" value="Subscribe Now" class="btn"
         on="tap:AMP.setState({ clicked: true })"
         >
