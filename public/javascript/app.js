@@ -10,6 +10,9 @@ const prices = {};
 //   messagingSenderId: '955066520266',
 //   appId: '1:955066520266:web:ec7135a76fea7a1bce9a33',
 // };
+
+// this is web3 only
+/*
 const firebaseConfig = {
   apiKey: "AIzaSyC3kWZDYjBQyrLEQwSnhNRmNY1OvbjZXKk",
   authDomain: "web3-marketing.firebaseapp.com",
@@ -19,6 +22,18 @@ const firebaseConfig = {
   appId: "1:165267088791:web:e7b90dff7748b902f350d2",
   measurementId: "G-7HN236MC06"
 };
+*/
+  // authDomain: "timminsforcongress-production.firebaseapp.com",
+const firebaseConfig = {
+  apiKey: "AIzaSyBT_pwYUuy7ZXHS0bBAYLmu9JhUAbVi_NY",
+  authDomain: "donate.timminsforcongress.com",
+  projectId: "timminsforcongress-production",
+  storageBucket: "timminsforcongress-production.firebasestorage.app",
+  messagingSenderId: "445409102594",
+  appId: "1:445409102594:web:75cb02b0c9066cc739501b",
+  measurementId: "G-849H771JYQ"
+};
+
 
 // Replace with your cloud functions location
 const functionLocation = 'us-central1';
