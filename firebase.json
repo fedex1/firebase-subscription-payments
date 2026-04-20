@@ -3,7 +3,20 @@
     "rules": "firestore.rules",
     "indexes": "firestore.indexes.json"
   },
-  "hosting": {
+  "hosting": 
+  [
+    {
+      "target": "timmins-payments",
+    "cleanUrls": true,
+      "public": "public",
+      "ignore": [
+        "firebase.json",
+        "**/.*",
+        "**/node_modules/**"
+      ]
+    },
+  {
+      "target": "default",
     "cleanUrls": true,
     "public": "public",
     "ignore": [
@@ -11,7 +24,7 @@
       "**/.*",
       "**/node_modules/**"
     ]
-  },
+  } ],
   "functions": [
     {
       "source": "functions",

@@ -1,0 +1,23 @@
+{
+  "projects": {
+    "prop-marketing": "prop-marketing",
+    "web3-marketing": "web3-marketing",
+    "default": "web3-marketing"
+  },
+  "targets": {
+    "timminsforcongress-production": {
+      "hosting": {
+        "timmins-payments": [
+          "timmins-payments"
+        ]
+      }
+    }
+  },
+  "etags": {
+    "web3-marketing": {
+      "extensionInstances": {
+        "firestore-stripe-payments": "574cd67fdc7293ca930b57c9105a48aa9ad6e0735cfeb6d974708f2fe1809284"
+      }
+    }
+  }
+}
